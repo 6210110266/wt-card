@@ -3,7 +3,7 @@ import { View, Text ,StyleSheet } from "react-native";
 
 export default function Forecast(props) {
   return (
-    <View>
+    <View style={styles.Layout}>
       <Text style={styles.Text1}>{props.main}</Text>
       <Text style={styles.Text2}>{props.description}</Text>
       <View style={styles.Row}>
@@ -17,17 +17,26 @@ export default function Forecast(props) {
 const styles = StyleSheet.create({
   Text1: {
     flexDirection: "column",
-    fontSize: 20,
+    alignItems: "center",
+    fontSize: 24,
     color: '#FFFFFF',
+    textAlign:"center",
   },
   Text2: {
     flexDirection: "column",
     alignItems: "center",
     fontSize: 16,
     color: '#FFFFFF',
+    textAlign:"center",
   },
   Row: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  Layout: {
+    alignItems: "center",
+    flexDirection: "column",
+    justifyContent:"space-evenly",
+    height: "100%"
   },
 })
