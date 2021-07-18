@@ -8,9 +8,6 @@ export default function Forecast(props) {
       <Text style={styles.name_text}>{props.name}</Text>
       <View style={styles.main_box}>
       <View style={styles.main_holder_view}>
-      {/* <Image 
-                source={{uri: 'http://openweathermap.org/img/wn/'+props.icon+'@2x.png',}} 
-                style={styles.logo}/> */}
         <View><Text style={styles.main_text}>{props.main}</Text>
         <Text style={styles.des_text}>{props.description}</Text></View>
         
@@ -66,7 +63,7 @@ const styles = StyleSheet.create({
   },
   name_text: {
     fontSize:40,
-    color:"#464646",
+    color:"#FFF",
         marginLeft:"5%",
         marginTop:"5%",
         fontWeight:"bold",

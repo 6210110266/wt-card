@@ -25,7 +25,7 @@ export default function ZipCodeScreen() {
   return (
     <SafeAreaView style={styles.containerbg}>
       <ImageBackground source = {require('../bg.jpg')} style = {styles.backdrop}>
-      
+      <Text style={styles.text} >TH Country Weather </Text>
       <FlatList
         data={availableZipItems}
         keyExtractor={_keyExtractor}
@@ -49,7 +49,9 @@ const styles = StyleSheet.create({
         alignItems:"center",
         flexDirection:"row",
         marginLeft:"10%",
-        marginTop:"3.5%"
+        marginTop:"3.5%",
+       
+
   },
   zipPlace: {
     flex: 1,
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize:20,
     color:"#464646",
-    marginLeft:"5%",
+    marginLeft:"28%",
   },
   containerbg: {
     height:Dimensions.get("window").height,
@@ -79,7 +81,7 @@ text: {
   fontSize:25,
   color:"#FFF",
   fontWeight:"bold",
-  marginLeft:"7%",
+  marginLeft:"10%",
   marginTop:"5%"
 },
 })

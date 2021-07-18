@@ -38,7 +38,7 @@ export default function Weather(props) {
 
   return (
     <SafeAreaView style={styles.containerbg}>
-      <ImageBackground source = {require('../bg.jpg')} style = {styles.backdrop}>
+      <ImageBackground source = {require('../bg2.jpg')} style = {styles.backdrop}>
       <Text style={styles.zipText}>Zipcode : {props.zipCode}</Text>
         <Forecast {...forecastInfo} />
       </ImageBackground>
@@ -50,9 +50,6 @@ export default function Weather(props) {
 
 const styles = StyleSheet.create({
   backdrop: {
-    // flexDirection: "column",
-    // justifyContent:"space-between",
-    // alignItems: "center",
     width: "100%",
     height: "100%",
   },
