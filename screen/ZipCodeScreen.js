@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet,View, Text,FlatList,TouchableHighlight } from "react-native";
+import { StyleSheet,View, Text,FlatList,TouchableHighlight,ImageBackground } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation  } from "@react-navigation/core";
+
 
 const availableZipItems = [
   { place: "Hatyai", code: "90110" },
@@ -23,6 +24,7 @@ const _keyExtractor = (item) => item.code;
 export default function ZipCodeScreen() {
   const navigation = useNavigation();
   return (
+    <ImageBackground source = {require('../bg.jpg')} style = {styles.backdrop}>
     <View>
       <FlatList
         data={availableZipItems}
@@ -31,6 +33,7 @@ export default function ZipCodeScreen() {
       />
       <StatusBar style="auto" />
     </View>
+     </ImageBackground>
   );
 }
 
@@ -48,5 +51,15 @@ const styles = StyleSheet.create({
   zipCode: {
     flex:1,
     
-  }
+  },
+  Image_Background_Style:{
+    height:"100%",
+    width:"100%"
+  },
+  backdrop: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+}
 })

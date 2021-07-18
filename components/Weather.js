@@ -1,5 +1,5 @@
 import React, { useState ,useEffect } from "react";
-import { StyleSheet, View, Text, ImageBackground } from "react-native";
+import { StyleSheet, View, Text, ImageBackground,SafeAreaView, Dimensions} from "react-native";
 import Forecast from "./Forecast";
 
 export default function Weather(props) {
@@ -37,18 +37,16 @@ export default function Weather(props) {
   
 
   return (
-    <ImageBackground source={require("../bg.jpg")} style={styles.backdrop}>
-      <View style={styles.greybg}>
-        <View style={styles.Row}>
-          <Text style={styles.Text2}>Zip Code is </Text>
-          <Text style={styles.Text2}>{props.zipCode}</Text>
-        </View>
-        <View>
-          <Forecast {...forecastInfo} />
-          
-        </View>
-      </View>
-    </ImageBackground>
+    <SafeAreaView style={styles.containerbg}>
+      <ImageBackground source = {require('../bg.jpg')} style = {styles.backdrop}>
+        <Text  style={styles.Text2}>Zip Code is {props.zipCode}</Text>
+        <Forecast {...forecastInfo} />
+
+        
+      </ImageBackground>
+
+
+    </SafeAreaView>
   );
 }
 
@@ -60,17 +58,9 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  greybg: {
-    // justifyContent: "center",
-    backgroundColor: "rgba(0,0,0,0.5)",
-    alignItems: "center",
-    width: "100%",
-    height: "60%",
-    justifyContent: "space-evenly",
-  },
-  Row: {
-    flexDirection: "row",
-    alignItems: "center",
+  containerbg: {
+    height:Dimensions.get("window").height,
+    width: Dimensions.get("window").width
   },
   Text2: {
     paddingTop: "15%",
