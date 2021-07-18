@@ -39,10 +39,8 @@ export default function Weather(props) {
   return (
     <SafeAreaView style={styles.containerbg}>
       <ImageBackground source = {require('../bg.jpg')} style = {styles.backdrop}>
-        <Text  style={styles.Text2}>Zip Code is {props.zipCode}</Text>
+      <Text style={styles.zipText}>Zipcode : {props.zipCode}</Text>
         <Forecast {...forecastInfo} />
-
-        
       </ImageBackground>
 
 
@@ -52,9 +50,9 @@ export default function Weather(props) {
 
 const styles = StyleSheet.create({
   backdrop: {
-    flexDirection: "column",
+    // flexDirection: "column",
     // justifyContent:"space-between",
-    alignItems: "center",
+    // alignItems: "center",
     width: "100%",
     height: "100%",
   },
@@ -62,29 +60,14 @@ const styles = StyleSheet.create({
     height:Dimensions.get("window").height,
     width: Dimensions.get("window").width
   },
-  Text2: {
-    paddingTop: "15%",
-    flexDirection: "column",
-    alignItems: "center",
-    fontSize: 16,
-    color: "#FFFFFF",
+  zipText: {
+    fontSize:20,
+        color:"#464646",
+        marginLeft:"55%",
+        marginTop:"2%",
+        color:"#FFF",
+        justifyContent:"center",
+        alignItems:"center",
+        flexDirection:"row"
   },
 });
-
-// export const getImageBackgroundSrc = (weatherName) => {
-//   let listWeather = {
-//       'sn': require('./../../assets/weather/sn.png'), //snow
-//       'sl': require('./../../assets/weather/sl.png'), //Sleet
-//       'h': require('./../../assets/weather/h.png'), //Hail
-//       't': require('./../../assets/weather/t.png'), //Thunderstorm
-//       'hr': require('./../../assets/weather/hr.png'), //Heavy Rain
-//       'lr': require('./../../assets/weather/lr.png'), //Light Rain
-//       's': require('./../../assets/weather/s.png'), //Showers
-//       'hc': require('./../../assets/weather/hc.png'), //Heavy Cloud
-//       'lc': require('./../../assets/weather/lc.png'), //Light Cloud
-//       'c': require('./../../assets/weather/c.png'), //Clear
-
-//   };
-
-//   return listWeather[weatherName];
-// }
