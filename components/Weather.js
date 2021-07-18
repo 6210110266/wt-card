@@ -1,12 +1,14 @@
 import React, { useState ,useEffect } from "react";
 import { StyleSheet, View, Text, ImageBackground } from "react-native";
 import Forecast from "./Forecast";
-
+import SearchInput from "../components/SearchInput";
 export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: "main",
         description: "description",
         temp: 0,
+        icon: "icon",
+        name: "name",
     });
 
     useEffect(() => {
@@ -19,6 +21,8 @@ export default function Weather(props) {
                 main: json.weather[0].main,
                 description: json.weather[0].description,
                 temp: json.main.temp,
+                icon: json.weather[0].icon,
+                name: json.name
             });
             })
             .catch((error) => {
@@ -39,6 +43,7 @@ export default function Weather(props) {
           <Forecast {...forecastInfo} />
         </View>
       </View>
+      <SearchInput searchPlaceHoder={"Search any city"}/>
     </ImageBackground>
   );
 }
@@ -71,3 +76,21 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
 });
+
+// export const getImageBackgroundSrc = (weatherName) => {
+//   let listWeather = {
+//       'sn': require('./../../assets/weather/sn.png'), //snow
+//       'sl': require('./../../assets/weather/sl.png'), //Sleet
+//       'h': require('./../../assets/weather/h.png'), //Hail
+//       't': require('./../../assets/weather/t.png'), //Thunderstorm
+//       'hr': require('./../../assets/weather/hr.png'), //Heavy Rain
+//       'lr': require('./../../assets/weather/lr.png'), //Light Rain
+//       's': require('./../../assets/weather/s.png'), //Showers
+//       'hc': require('./../../assets/weather/hc.png'), //Heavy Cloud
+//       'lc': require('./../../assets/weather/lc.png'), //Light Cloud
+//       'c': require('./../../assets/weather/c.png'), //Clear
+
+//   };
+
+//   return listWeather[weatherName];
+// }
